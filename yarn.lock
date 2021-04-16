@@ -410,10 +410,10 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-mathlive@^0.59.0:
-  version "0.59.0"
-  resolved "https://registry.yarnpkg.com/mathlive/-/mathlive-0.59.0.tgz#95e3720a8c16a295d266c36ddf9d6c8bfc363228"
-  integrity sha512-CUf7kAY1UWTvJm5IFJrFlXssyl851aGPNAdlchMbAMZQnryudQJE59BlrPTtAeY95k41PGqMmM8Vozj+We+hNA==
+mathlive@^0.60.1:
+  version "0.60.1"
+  resolved "https://registry.yarnpkg.com/mathlive/-/mathlive-0.60.1.tgz#365545c631026788143a512b8751baf24f0471e1"
+  integrity sha512-nPUEu5vaj1F1hijUSETeM1IRyUHmrDVcqSEsPk40xkz0yJPdxxOaK9sCmIT8APuFPMBxklSRChzok670pkRHqw==
 
 minimist@^1.2.5:
   version "1.2.5"

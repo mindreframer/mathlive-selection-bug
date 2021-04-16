@@ -5,7 +5,6 @@ export const selectionChanged = createEventDefinition<{
   latex: string;
   start: number;
   end?: number;
-  depth?: number;
 }>()("selection.changed");
 
 export const deleteMathInput = createEventDefinition<{

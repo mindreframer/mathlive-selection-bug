@@ -29,7 +29,7 @@ function App() {
       bus.subscribe(selectionChanged, (event) => {
         setChangedLatex(
           event.payload.latex +
-            `  -->> from/to: ( ${event.payload.start} - ${event.payload.end}, depth: ${event.payload.depth} ) `
+            `  -->> from/to: ( ${event.payload.start} - ${event.payload.end} ) `
         );
       });
 

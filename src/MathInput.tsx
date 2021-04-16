@@ -47,17 +47,17 @@ const configureMathElement = (mfe: mathlive.MathfieldElement) => {
   mfe.addEventListener("selection-change", (ev: Event) => {
     let mfe = ev.target as mathlive.MathfieldElement;
     const sel = mfe.selection;
+    console.log(sel, "SELECTION");
     if (sel) {
-      const s1 = sel[0];
-      console.log(`${s1.start} -> ${s1.end}`);
+      const s1 = sel.ranges[0];
+      console.log(`${s1[0]} -> ${s1[1]}`);
       console.log("RANGE", s1);
       console.log(mfe.getValue(s1));
       bus.publish(
         selectionChanged({
           latex: mfe.getValue(s1),
-          start: s1.start,
-          end: s1.end,
-          depth: s1.depth,
+          start: s1[0],
+          end: s1[1],
         })
       );
     }
@@ -98,15 +98,12 @@ export const MathInput = ({ value, onChange, position }: MathInputProps) => {
     const selection = parts.map((a) => parseInt(a));
     if (selection.length == 2) {
       const sel = {
-        start: selection[0],
-        end: selection[1],
-        direction: "forward",
-        collapsed: false,
-        depth: 1,
+        direction: "none",
+        ranges: [[selection[0], selection[1]]],
       };
       console.log("SETTING SELECTION", sel);
       // @ts-ignore
-      mfe.selection = [sel];
+      mfe.selection = sel;
       mfe.focus();
     }
   };
